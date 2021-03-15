@@ -39,8 +39,7 @@ objImagesEl.style.listStyle = 'none';
 
 const makeProductCard = images.map(image =>
   objImagesEl.insertAdjacentHTML('beforeend', `<li><img src="${image.url}" alt="${image.alt}" width = 320 height = 240></li>`)
-  );
-
+  ); 
 // console.log(...makeProductCard);
 // objImagesEl.append(...makeProductCard);
 // Напиши скрипт для создания галлереи изображений по массиву данных.
