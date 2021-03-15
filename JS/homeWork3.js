@@ -19,24 +19,30 @@ const images = [
 
 const objImagesEl = document.querySelector('#gallery')
 objImagesEl.style.display = 'flex';
-const makeProductCard = images.map(image => {
-    const itemRef = document.createElement('li');
-    itemRef.style.marginLeft = '20px';
-    itemRef.style.listStyle = 'none';
-    const imgRef = document.createElement('img');
-    imgRef.width = 320;
-    imgRef.height = 240;
-    imgRef.setAttribute('src', image.url);
-    imgRef.setAttribute('alt', image.alt);
-    itemRef.append(imgRef);
-    return itemRef;
-});
+objImagesEl.style.listStyle = 'none';
+// objImagesEl.style.display = 'flex';
+// const makeProductCard = images.map(image => {
+//     const itemRef = document.createElement('li');
+//     itemRef.style.marginLeft = '20px';
+//     itemRef.style.listStyle = 'none';
+//   const imgRef = document.createElement('img');
+//   console.log(itemRef);
+//     imgRef.width = 320;
+//     imgRef.height = 240;
+//     imgRef.setAttribute('src', image.url);
+//     imgRef.setAttribute('alt', image.alt);
+//     itemRef.append(imgRef);
+//     return itemRef;
+// });
 
-objImagesEl.append(...makeProductCard);
+// objImagesEl.append(...makeProductCard);
 
+const makeProductCard = images.map(image =>
+  objImagesEl.insertAdjacentHTML('beforeend', `<li><img src="${image.url}" alt="${image.alt}" width = 320 height = 240></li>`)
+  );
 
-// console.log(makeProductCard);
-
+// console.log(...makeProductCard);
+// objImagesEl.append(...makeProductCard);
 // Напиши скрипт для создания галлереи изображений по массиву данных.
 
 // В HTML есть список ul#gallery.
